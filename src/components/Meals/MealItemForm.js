@@ -5,7 +5,7 @@ import Input from "../UI/Input"
 import classes from "./MealItemForm.module.css"
 
 const MealItemForm = (props) => {
-  const { name, price } = props
+  const { name, price, id } = props
   const cartCtx = useContext(CartContext)
   const [enteredAmount, setEnteredAmount] = useState(0)
   const [isAmountValid, setIsAmountValid] = useState(true)
@@ -16,6 +16,7 @@ const MealItemForm = (props) => {
       return
     }
     const newItem = {
+      id,
       name,
       price,
       amount: enteredAmount,
