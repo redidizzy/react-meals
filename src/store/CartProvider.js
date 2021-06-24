@@ -57,6 +57,8 @@ const cartReducer = (state, action) => {
         totalAmount: updatedTotalAmount,
       }
     }
+    case "CLEAR":
+      return defaultCartState
     default:
       return defaultCartState
   }
@@ -80,6 +82,11 @@ const CartProvider = (props) => {
       dispatchCartActions({
         type: "REMOVE",
         id,
+      })
+    },
+    clear() {
+      dispatchCartActions({
+        type: "CLEAR",
       })
     },
   }
